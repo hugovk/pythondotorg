@@ -35,3 +35,6 @@ django-waffle==0.14
 
 djangorestframework==3.8.2
 django-filter==1.1.0
+
+# Remove when moving PEPs to Read the Docs
+pygments==2.6.1
