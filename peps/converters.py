@@ -19,12 +19,6 @@ from pages.models import Page, Image
 PEP_TEMPLATE = 'pages/pep-page.html'
 pep_url = lambda num: 'dev/peps/pep-{}/'.format(num)
 
-# To simplify syntax highlighting, all literal blocks (those produced by ::)
-# in the following PEPs will be automatically highlighted using Python lexer.
-# PEP editors/authors could make simple PRs extending this list.
-# This will be not needed when PEPs are moved to RtD and all code blocks are
-# formatted using .. code:: language.
-PURE_PYTHON_PEPS = [483, 484, 526]
 
 def get_peps_last_updated():
     last_update = Page.objects.filter(
@@ -150,21 +144,6 @@ def convert_pep_page(pep_number, content):
     # Fix PEP links
     pep_content = BeautifulSoup(data['content'], 'lxml')
     body_links = pep_content.find_all("a")
-    # Fix highlighting code
-    code_blocks = pep_content.find_all('pre', class_='code')
-    for cb in code_blocks:
-        del cb['class']
-        div = pep_content.new_tag('div')
-        div['class'] = ['highlight']
-        cb.wrap(div)
-    # Highlight existing pure-Python PEPs
-    if int(pep_number) in PURE_PYTHON_PEPS:
-        literal_blocks = pep_content.find_all('pre', class_='literal-block')
-        for lb in literal_blocks:
-            block = lb.string
-            if block:
-                highlighted = highlight(block, PythonLexer(), HtmlFormatter())
-                lb.replace_with(BeautifulSoup(highlighted).html.body.div)
 
     pep_href_re = re.compile(r'pep-(\d+)\.html')
 
