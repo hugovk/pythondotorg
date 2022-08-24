@@ -45,5 +45,5 @@ xhtml2pdf==0.2.5
 django-easy-pdf3==0.1.2
 num2words==0.5.10
 django-polymorphic==3.0.0
-sorl-thumbnail==12.7.0
+sorl-thumbnail==12.8.0
 docxtpl==0.12.0
