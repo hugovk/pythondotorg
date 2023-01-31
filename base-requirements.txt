@@ -41,7 +41,7 @@ django-filter==2.4.0
 django-ordered-model==3.4.3
 django-widget-tweaks==1.4.8
 django-countries==7.2.1
-xhtml2pdf==0.2.5
+xhtml2pdf==0.2.9
 django-easy-pdf3==0.1.2
 num2words==0.5.10
 django-polymorphic==3.0.0
