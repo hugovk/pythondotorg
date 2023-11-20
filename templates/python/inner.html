@@ -623,8 +623,17 @@ p q r s t u v w x y z { | } ~</samp></pre>
 
 {% block left_sidebar %}
 <aside class="left-sidebar" role="secondary">
-  
+
     {% include "components/navigation-widget.html" %}
+
+    <link rel="stylesheet" href="/static/stylesheets/mastodon-timeline.css" />
+    <script src="/static/js/mastodon-timeline.js"></script>
+
+    <div class="mt-timeline">
+      <div id="mt-body" class="mt-body" role="feed">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
 
     <div class="twitter-widget sidebar-widget">
         <script type="text/javascript" src="//widgets.twimg.com/j/2/widget.js"></script>

@@ -1916,6 +1916,11 @@ $colors: $blue, $psf, $yellow, $green, $purple, $red;
     .twitter-widget { padding: 0; }
 
     .twtr-doc { padding: .75em; }
+
+    .mt-timeline {
+        border: 1px solid rgb(128, 128, 128);
+        font-size: 0.9em;
+    }
 }
 
 .right-sidebar {

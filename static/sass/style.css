@@ -2775,6 +2775,9 @@ p.quote-by-organization {
   padding: 0; }
 .left-sidebar .twtr-doc {
   padding: .75em; }
+.left-sidebar .mt-timeline {
+  border: 1px solid rgb(128, 128, 128);
+  font-size: 0.9em; }
 
 .jobs-form p {
   padding: 0 0.3125em; }
